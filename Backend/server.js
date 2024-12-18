@@ -2,6 +2,8 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const cors = require('cors');
+app.use(cors({ origin: 'https://ethics-checker-frontend.onrender.com' }));
 
 const app = express();
 
