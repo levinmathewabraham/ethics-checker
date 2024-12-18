@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
+from fastapi.middleware.cors import CORSMiddleware
 import joblib
 
 # Load model and vectorizer
@@ -7,6 +8,14 @@ model = joblib.load('bias_detector_model.pkl')
 vectorizer = joblib.load('vectorizer.pkl')
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["https://ethics-checker-frontend.onrender.com/"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 class Prompt(BaseModel):
     text: str
