@@ -4,6 +4,9 @@ require('dotenv').config();
 
 const app = express();
 
+
+const cors = require('cors');
+app.use(cors());
 // Test Route
 app.get('/', (req, res) => {
     res.send('Server is running and connected to MongoDB');
