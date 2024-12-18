@@ -6,11 +6,9 @@ services:
   repo: https://github.com/levinmathewabraham/ethics-checker
   plan: free
   envVars:
-  - key:  MONGO_URI
-    value: mongodb+srv://levinmabraham:XCUW6oxMkFyUKwEQ@ethics-checker.wfb80.mongodb.net/?retryWrites=true&w=majority&appName=ethics-checker
+  - key:  mongodb+srv://levinmabraham:XCUW6oxMkFyUKwEQ@ethics-checker.wfb80.mongodb.net/?retryWrites=true&w=majority&appName=ethics-checker
     sync: false
-  - key: PORT
-    value: 5000
+  - key: 5000
     sync: false
   region: singapore
   buildCommand: yarn
